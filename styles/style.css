@@ -10,10 +10,9 @@
     background-color: rgb(228, 243, 194);
     overflow: hidden;
     position: relative;
+    margin: 1em;
+
 }
-
-
-
 
 #player{
     position: absolute;
@@ -27,13 +26,7 @@
 #enemy{
     position: absolute;
     background-color: rgb(199, 53, 16);
-    overflow: hidden;
  }
    
     
- .container {
-    height: 98%;
-    width: 715px;
-    border: 1px solid grey;
-    margin: 1em;
-}
+
