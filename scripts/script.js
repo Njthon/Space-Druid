@@ -2,8 +2,8 @@ const player = {
     positionX: 0,
     positionY: 0,
     domElement: document.getElementById("player"),
-    width: 20 + "px",
-    height: 30 + "px",
+    width: 50,
+    height: 50,
 }
 
 const enemy = {
@@ -16,7 +16,10 @@ const enemy = {
 
 };
 
-let moveBy = 5;
+
+let moveBy = 20;
+
+let playerMoveBy = 5;
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -35,6 +38,9 @@ function displayElements() {
 
     enemy.domElement.style.width = enemy.width + "px"
     enemy.domElement.style.height = enemy.height + "px"
+
+    player.domElement.style.width = player.width + "px"
+    player.domElement.style.height = player.height + "px"
 }
 
 
@@ -42,24 +48,28 @@ function attachEventListeners() {
     window.addEventListener("keydown", (e) => {
         switch (e.key) {
             case "a":
-                if (player.positionX - moveBy >= 0) {
-                    player.positionX -= moveBy;
+            case "ArrowLeft":
+                if (player.positionX - playerMoveBy >= 0) {
+                    player.positionX -= playerMoveBy;
                     player.domElement.style.left = parseInt(player.positionX) + "px"
                 }
                 break;
             case "d":
-                if (player.positionX + moveBy <= 685) {
-                    player.positionX += moveBy;
+            case "ArrowRight":
+                if (player.positionX + playerMoveBy <= 685) {
+                    player.positionX += playerMoveBy;
                     player.domElement.style.left = parseInt(player.positionX) + "px"
                 } break;
             case "w":
-                if (player.positionY - moveBy >= 0) {
-                    player.positionY -= moveBy;
+            case "ArrowUp":
+                if (player.positionY - playerMoveBy >= 0) {
+                    player.positionY -= playerMoveBy;
                     player.domElement.style.top = parseInt(player.positionY) + "px"
                 } break;
             case "s":
-                if (player.positionY + moveBy <= 665) {
-                    player.positionY += moveBy;
+            case "ArrowDown":
+                if (player.positionY + playerMoveBy <= 665) {
+                    player.positionY += playerMoveBy;
                     player.domElement.style.top = parseInt(player.positionY) + "px"
                 } break;
         }
@@ -79,28 +89,36 @@ setInterval(function () {
 setInterval(function () {
 
     //move enemy
-    if (enemy.direction === "left") {
+    if (enemy.direction === "left" && enemy.positionX >= 0) {
         enemy.positionX -= moveBy;
         enemy.domElement.style.left = parseInt(enemy.positionX) + "px";
-    } else if (enemy.direction === "right") {
+    } else if (enemy.direction === "right" && enemy.positionX <= 685) {
         enemy.positionX += moveBy;
         enemy.domElement.style.left = parseInt(enemy.positionX) + "px";
-    } else if (enemy.direction === "up") {
+    } else if (enemy.direction === "up" && enemy.positionY >= 0) {
         enemy.positionY -= moveBy;
         enemy.domElement.style.top = parseInt(enemy.positionY) + "px";
-    } else if (enemy.direction === "down") {
+    } else if (enemy.direction === "down" && enemy.positionY <= 665) {
         enemy.positionY += moveBy;
         enemy.domElement.style.top = parseInt(enemy.positionY) + "px";
     }
 
 
     //detect collision
-    if () {
+    if (
+        player.positionX < enemy.positionX + enemy.width &&
+        player.positionX + player.width > enemy.positionX &&
+        player.positionY < enemy.positionY + enemy.height &&
+        player.height + player.positionY > enemy.positionY
+    ) {
         console.log("gamover... ");
+        location.href = 'gameover.html';
     }
 
 
 }, 60);
+
+
 
 
 
