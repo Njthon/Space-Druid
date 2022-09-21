@@ -1,0 +1,39 @@
+* {
+    padding : 0;
+    margin : 0;
+}
+
+#main-game{
+    width: 98%;
+    height: 715px;
+    border: 1px solid black;
+    background-color: rgb(228, 243, 194);
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+
+#player{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: violet;
+    overflow: hidden;
+    }
+
+#enemy{
+    position: absolute;
+    background-color: rgb(199, 53, 16);
+    overflow: hidden;
+ }
+   
+    
+ .container {
+    height: 98%;
+    width: 715px;
+    border: 1px solid grey;
+    margin: 1em;
+}
