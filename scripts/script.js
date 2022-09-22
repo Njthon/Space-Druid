@@ -16,10 +16,37 @@ const enemy = {
 
 };
 
+class Prize {
 
-let moveBy = 20;
+    constructor() {
+        this.width = 30;
+        this.height = 30;
+        this.positionX = Math.floor(Math.random() * (665 - this.width + 1));
+        this.positionY = Math.floor(Math.random() * (685 - this.width + 1));
+        this.createDom();
+        this.flower = [];
+        this.dom = null;
+    }
+    createDom() {
+        this.dom = document.createElement('div');
+        this.dom.className = "flower";
+        this.dom.style.width = this.width + "px";
+        this.dom.style.height = this.height + "px";
+        this.dom.style.top = this.positionY + "px";
+        this.dom.style.left = this.positionX + "px";
 
-let playerMoveBy = 5;
+        const boardElm = document.getElementById("main-game");
+        boardElm.appendChild(this.dom)
+    }
+
+
+}
+
+let prize = new Prize();
+
+let moveBy = 5;
+
+let playerMoveBy = 15;
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -114,11 +141,31 @@ setInterval(function () {
         console.log("gamover... ");
         location.href = 'gameover.html';
     }
+    scoring()
 
 
 }, 60);
 
 
 
+function scoring() {
+    const removeFlower = document.getElementsByClassName("flower")[0]
+    const points = document.getElementById("points")
+    let score = +points.innerHTML || 0;
 
+
+    if (
+        player.positionX < prize.positionX + prize.width &&
+        player.positionX + player.width > prize.positionX &&
+        player.positionY < prize.positionY + prize.height &&
+        player.height + player.positionY > prize.positionY
+    ) {
+
+        score += 20;
+        points.innerHTML = score;
+        removeFlower.remove();
+        moveBy += 1;
+        prize = new Prize();
+    }
+}
 
