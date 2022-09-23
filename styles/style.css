@@ -1,52 +1,159 @@
+@font-face {
+    font-family: 'Stigo', sans-serif;
+    src: url("http://fonts.cdnfonts.com/css/stigo");
+  }
+
+
 * {
     padding : 0;
     margin : 0;
 }
 
+#start-game {
+    background-image: url(/media/T_17-01.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    font-family: 'Stigo', sans-serif;
+
+
+    
+
+} 
+
 #main-game{
+    display: flex;
     width: 725px;
     height: 715px;
     border: 1px solid black;
-    background-color: rgb(228, 243, 194);
     overflow: hidden;
     position: absolute;
     margin: 1em;
-    text-align: center;
+    left: 50px;
+    background-image: url(/media/vecteezy1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin: 5px solid black;
 
+    
+    
+}
+#main-game-body{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 #player{
     position: absolute;
     border-radius: 50%;
-    background-color: violet;
     overflow: hidden;
+    background-image: url(/media/run6.png);
+    background-repeat: no-repeat;
+    background-size:contain 
     }
 
 #enemy{
     position: absolute;
-    background-color: rgb(199, 53, 16);
+    background-image: url("/media/skeleton-animation_01.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
  }
    
 .flower{
-    background-color: blue;
+    background-image: url(/media/Leaf\ icon-04.png);
+    background-size: 100%;
+     background-repeat: no-repeat;
     position: absolute;
  }
 
  #points {
-    width: 40px;
-    height: 20px;
+    width: 200px;
+    height: 220px;
+    background-color: rgb(243, 234, 109);
+    border: 2px solid rgb(189, 212, 120);
+    position: fixed;
+    left: 797px;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    background-color: rgb(246, 233, 57);
-    border: 2px solid rgb(189, 212, 120)
-    
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px blue, 0 0 5px darkblue;
+    border-radius: 10px 50px 20px;
+    border:4px double rgb(242, 104, 255);
+    font-family: 'Games', sans-serif;
+    src: url ("http://fonts.cdnfonts.com/css/games")
+
+
+
+
  }
     
 
 
 a, h1 {
-    display: flex;
+    text-decoration-line: none;
+    color: black;
+    font-family: 'Stigo', sans-serif;
+
+
+}
+
+.enemyExtra {
+    position: absolute;
+    background-color: rgb(199, 53, 16);
+}
+
+
+
+
+#link {
+    margin-top: 200px;
+    text-align: center;
+    right: 80px;
+    text-decoration: dashed;
+    color: rgb(255, 0, 149);
+    font-family: 'Stigo', sans-serif;
+
+
+}
+
+#laika {
+    width: 200px;
+    height: 150px;
+     background-image: url(/media/Laika.jpeg);
+     background-size: 100%;
+     background-repeat: no-repeat;
+     border: 2px solid black;
+     border-radius: 50%;
+
+}
+
+#gameover-div{
+
+    display:flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background-image: url(/media/fd2487ab6bf23a6ae4ac2748e7266f22.jpeg);
+    background-size: 100%;
+
 }
+h2 {
+    color: rgb(230, 25, 25);
+    font-family: 'Stigo', sans-serif;
+
+}
+
+#h3-start-game{
+
+    margin-top: 100px;
+    font-family: 'Stigo', sans-serif;
+
+}
+

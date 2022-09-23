@@ -2,13 +2,13 @@ const player = {
     positionX: 0,
     positionY: 0,
     domElement: document.getElementById("player"),
-    width: 50,
-    height: 50,
+    width: 130,
+    height: 130,
 }
 
 const enemy = {
-    width: 50,
-    height: 50,
+    width: 100,
+    height: 100,
     positionX: 500,
     positionY: 400,
     direction: "left",
@@ -16,11 +16,12 @@ const enemy = {
 
 };
 
+
 class Prize {
 
     constructor() {
-        this.width = 30;
-        this.height = 30;
+        this.width = 40;
+        this.height = 40;
         this.positionX = Math.floor(Math.random() * (665 - this.width + 1));
         this.positionY = Math.floor(Math.random() * (685 - this.width + 1));
         this.createDom();
@@ -119,13 +120,13 @@ setInterval(function () {
     if (enemy.direction === "left" && enemy.positionX >= 0) {
         enemy.positionX -= moveBy;
         enemy.domElement.style.left = parseInt(enemy.positionX) + "px";
-    } else if (enemy.direction === "right" && enemy.positionX <= 685) {
+    } else if (enemy.direction === "right" && enemy.positionX <= 630) {
         enemy.positionX += moveBy;
         enemy.domElement.style.left = parseInt(enemy.positionX) + "px";
     } else if (enemy.direction === "up" && enemy.positionY >= 0) {
         enemy.positionY -= moveBy;
         enemy.domElement.style.top = parseInt(enemy.positionY) + "px";
-    } else if (enemy.direction === "down" && enemy.positionY <= 665) {
+    } else if (enemy.direction === "down" && enemy.positionY <= 660) {
         enemy.positionY += moveBy;
         enemy.domElement.style.top = parseInt(enemy.positionY) + "px";
     }
@@ -146,6 +147,8 @@ setInterval(function () {
 
 }, 60);
 
+let score = 0;
+
 
 
 function scoring() {
@@ -164,8 +167,18 @@ function scoring() {
         score += 20;
         points.innerHTML = score;
         removeFlower.remove();
-        moveBy += 1;
+        moveBy += 2;
         prize = new Prize();
+
+        if (score === 40 || score === 80 || score === 120) {
+            const newFoes = [];
+            foe = new Foe();
+        }
     }
 }
+
+
+
+
+
 
