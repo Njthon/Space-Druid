@@ -154,6 +154,13 @@ h2 {
 
     margin-top: 100px;
     font-family: 'Stigo', sans-serif;
+    color: rgb(139, 211, 68);
 
+}
+
+#h2-start-game{
+    margin-top: 100px;
+    font-family: 'Stigo', sans-serif;
+    color: rgb(21, 255, 0);
 }
 
