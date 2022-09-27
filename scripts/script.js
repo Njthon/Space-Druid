@@ -73,30 +73,33 @@ function displayElements() {
 
 
 function attachEventListeners() {
+
     window.addEventListener("keydown", (e) => {
         switch (e.key) {
             case "a":
             case "ArrowLeft":
-                if (player.positionX - playerMoveBy >= 0) {
+                if (player.positionX - playerMoveBy >= -50) {
                     player.positionX -= playerMoveBy;
                     player.domElement.style.left = parseInt(player.positionX) + "px"
+                    player.domElement.style.transform = "scaleX(-1)"
                 }
                 break;
             case "d":
             case "ArrowRight":
-                if (player.positionX + playerMoveBy <= 685) {
+                if (player.positionX + playerMoveBy <= 647) {
                     player.positionX += playerMoveBy;
                     player.domElement.style.left = parseInt(player.positionX) + "px"
+                    player.domElement.style.transform = "scaleX(+1)"
                 } break;
             case "w":
             case "ArrowUp":
-                if (player.positionY - playerMoveBy >= 0) {
+                if (player.positionY - playerMoveBy >= -50) {
                     player.positionY -= playerMoveBy;
                     player.domElement.style.top = parseInt(player.positionY) + "px"
                 } break;
             case "s":
             case "ArrowDown":
-                if (player.positionY + playerMoveBy <= 665) {
+                if (player.positionY + playerMoveBy <= 600) {
                     player.positionY += playerMoveBy;
                     player.domElement.style.top = parseInt(player.positionY) + "px"
                 } break;
@@ -120,13 +123,13 @@ setInterval(function () {
     if (enemy.direction === "left" && enemy.positionX >= 0) {
         enemy.positionX -= moveBy;
         enemy.domElement.style.left = parseInt(enemy.positionX) + "px";
-    } else if (enemy.direction === "right" && enemy.positionX <= 630) {
+    } else if (enemy.direction === "right" && enemy.positionX <= 610) {
         enemy.positionX += moveBy;
         enemy.domElement.style.left = parseInt(enemy.positionX) + "px";
     } else if (enemy.direction === "up" && enemy.positionY >= 0) {
         enemy.positionY -= moveBy;
         enemy.domElement.style.top = parseInt(enemy.positionY) + "px";
-    } else if (enemy.direction === "down" && enemy.positionY <= 660) {
+    } else if (enemy.direction === "down" && enemy.positionY <= 590) {
         enemy.positionY += moveBy;
         enemy.domElement.style.top = parseInt(enemy.positionY) + "px";
     }
@@ -170,15 +173,7 @@ function scoring() {
         moveBy += 2;
         prize = new Prize();
 
-        if (score === 40 || score === 80 || score === 120) {
-            const newFoes = [];
-            foe = new Foe();
-        }
+
     }
 }
-
-
-
-
-
 

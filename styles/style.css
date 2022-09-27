@@ -53,12 +53,19 @@
     position: absolute;
     border-radius: 50%;
     overflow: hidden;
-    background-image: url(../media/run6.png);
+    background-image: url(../media/ezgif.com-gif-maker.gif);
     background-repeat: no-repeat;
     background-size:contain 
     }
 
 #enemy{
+    position: absolute;
+    background-image: url(../media/skeleton-animation_01.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+ }
+
+ .enemyExtra{
     position: absolute;
     background-image: url(../media/skeleton-animation_01.png);
     background-size: 100%;
