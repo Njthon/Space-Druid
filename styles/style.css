@@ -59,13 +59,30 @@ body {
   color: var(--second-color);
 }
 
+#track-info {
+  font-size: 10px;
+  margin-top: -20px;
+  align-self: flex-end;
+  margin-left: 600px;
+}
+
+#stop-track {
+  font-size: 10px;
+  margin-left: -180px;
+  align-self: end;
+  border: 1 dashed var(--color-three);
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--color-three);
+  font-family: "Games", sans-serif;
+}
+
 .start-button {
   width: 136px;
   height: 52px;
   background-color: var(--second-color);
   border: 2px solid rgb(189, 212, 120);
   margin-left: 10px;
-  margin-top: 30px;
+  margin-top: 4px;
   align-self: center;
   font-size: large;
   text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px blue, 0 0 5px darkblue;
@@ -113,13 +130,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.enemy {
-  position: absolute;
-  background-image: url(../media/skeleton-animation_01.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-
 #hearts-container {
   width: 100px;
   height: 40px;
@@ -135,6 +145,13 @@ body {
   align-self: baseline;
   gap: 2px;
   z-index: 1;
+}
+
+.enemy {
+  position: absolute;
+  background-image: url(../media/skeleton-animation_01.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .flower {

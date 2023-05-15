@@ -152,9 +152,8 @@ export class Game {
             this.prize = new Prize();
             this.enemy.speed += 2;
             this.spawnEnemy();
-            // this.enemy = new Enemy();
         }
-    }
+    };
 
     // GAMEOVER
 
