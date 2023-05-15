@@ -25,6 +25,8 @@ export class Game {
         this.moveDetectInterval = setInterval(() => this.moveDetect(), 60);
     }
 
+    // PLAYER MOVEMENT
+
     attachEventListeners() {
         const dinWidth = document.getElementById("main-game").offsetWidth;
         const dinHeight = document.getElementById("main-game").offsetHeight;
@@ -47,7 +49,6 @@ export class Game {
             } else if (event.key === "ArrowDown" && this.player.positionY > 0) {
                 this.player.moveDown();
                 playerDiv.style.backgroundImage = "url('../media/SpaceDruidRun.gif')"
-
             }
         });
 
@@ -57,24 +58,28 @@ export class Game {
         })
     };
 
+    // RANDOM POSITION ENEMIES
+
     randomPosition() {
-        const directions = ["left", "right", "up", "down"];
+        const directions = ["left", "right", "up", "down"]
         const enemies = [this.enemy, ...this.minions]
         enemies.forEach((enemy) => {
             const randomDirection = directions[Math.floor(Math.random() * directions.length)];
-            enemy.direction = randomDirection;
-
+            enemy.direction = randomDirection
         })
 
-    }
+    };
+
+    // DETECT MOVEMENT
 
     moveDetect() {
-        const dinWidth = document.getElementById("main-game").offsetWidth;
-        const dinHeight = document.getElementById("main-game").offsetHeight;
+        const dinWidth = document.getElementById("main-game").offsetWidth
+        const dinHeight = document.getElementById("main-game").offsetHeight
         const enemies = [this.enemy, ...this.minions]
 
 
-        //move enemy
+        // Move Enemies
+
         enemies.forEach((enemy) => {
 
             if (enemy.direction === "left" && enemy.positionX > 0) {
@@ -86,6 +91,8 @@ export class Game {
             } else if (enemy.direction === "down" && enemy.positionY > 0) {
                 enemy.moveDown();
             }
+
+            // Detect Collision
 
             if (
                 this.player.positionX < enemy.positionX + enemy.width &&
@@ -106,11 +113,10 @@ export class Game {
             }
         });
 
-        //detect collision
+        this.score()
+    };
 
-
-        this.score();
-    }
+    // SPAWN NEW ENEMIES
 
     spawnEnemy() {
         const newEnemy = new Enemy(this);
@@ -125,7 +131,9 @@ export class Game {
         }
 
         this.minions.push(newEnemy);
-    }
+    };
+
+    // SCORING
 
     score() {
         const removeFlower = document.getElementsByClassName("flower")[0]
@@ -148,6 +156,8 @@ export class Game {
             // this.enemy = new Enemy();
         }
     }
+
+    // GAMEOVER
 
     gameover(score) {
         clearInterval(this.enemyInterval);
@@ -177,10 +187,7 @@ export class Game {
         gameoverDiv.appendChild(gameoverText3);
         gameoverDiv.appendChild(reStartButton);
         scoreElement.style.animation = "none";
-        // gameoverText1.style.animation = "none";
-        // gameoverText2.style.animation = "none";
-        // gameoverText3.style.animation = "none";
     }
-}
+};
 
 sessionStorage.setItem("newScore", score);

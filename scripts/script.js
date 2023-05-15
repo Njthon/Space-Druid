@@ -10,9 +10,12 @@ window.onload = function () {
 
 
 // START GAME 
+
+
 const startgameDiv = document.createElement("div");
 startgameDiv.setAttribute("id", "startgame-div");
 document.body.appendChild(startgameDiv);
+
 const startgameText1 = document.createElement("span")
 const startgameText2 = document.createElement("span")
 startgameText1.textContent = "Sara the Space Druid and her doggo are traveling through deep space. But doggo got sick :("
@@ -25,6 +28,7 @@ const startButton = document.createElement("button");
 startButton.setAttribute("class", "start-button");
 startButton.innerHTML = "Start";
 startgameDiv.appendChild(startButton);
+
 startButton.addEventListener("click", function () {
     const startGame = new Game()
     startgameDiv.style.display = "none";
@@ -37,7 +41,7 @@ reStartButton.setAttribute("id", "reStart-button");
 reStartButton.innerHTML = "Start";
 gameoverDiv.appendChild(reStartButton);
 
-// EVENT LISTENER
+// Event Listener
 reStartButton.addEventListener("click", function () {
     const enemy = document.getElementsByClassName("enemy");
     const prize = document.getElementsByClassName("flower");
@@ -49,7 +53,7 @@ reStartButton.addEventListener("click", function () {
     const removeButtons = document.getElementById("gameover-score")
     const removePlayer = document.getElementById("player");
 
-    // REMOVE ELEMENTS
+    // Remove Elements
     gameoverDiv.style.display = "none";
     removePlayer.style.display = "flex";
     removeButtons.style.display = "none";
