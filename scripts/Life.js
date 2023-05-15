@@ -3,6 +3,8 @@ export class Life {
         this.width = 20;
         this.height = 20;
         this.createHeart();
+        this.createHeart();
+        this.createHeart();
 
     }
 

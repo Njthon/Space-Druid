@@ -9,7 +9,7 @@ window.onload = function () {
 };
 
 
-// START GAME 
+// START GAME DIV
 
 
 const startgameDiv = document.createElement("div");

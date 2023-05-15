@@ -137,7 +137,6 @@ export class Game {
 
     score() {
         const removeFlower = document.getElementsByClassName("flower")[0]
-        console.log(removeFlower);
         const points = document.getElementById("points")
 
 
@@ -162,6 +161,7 @@ export class Game {
     gameover(score) {
         clearInterval(this.enemyInterval);
         clearInterval(this.moveDetectInterval);
+
         const gameoverDiv = document.getElementById("gameover-div");
         gameoverDiv.style.display = "flex";
 
