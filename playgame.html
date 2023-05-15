@@ -6,13 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Druid</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+    <link href="https://fonts.cdnfonts.com/css/horror" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/games" rel="stylesheet">
 
+    <style>
+        body {
+         font-family: 'Aclonica';
+        }
+        @import url('https://fonts.cdnfonts.com/css/horror');
+
+        </style>
 </head>
+
 <body id="main-game-body">
+    <audio id="myTrack" src="/media/Flavien Berger - Berzingue (Audio Officiel).mp3" autoplay></audio>
+
     <div class="container" id="main-game">
+
         <div id="player"></div>
-        <div id="enemy"></div>
-        <div id="points"></div>        
+         <div id="points-container">
+        <div id="points"></div>         
+        </div>        
+        <div id="hearts-container"></div>
+    </div> 
+        <div id="gameover-div"></div>  
+        
     </div>
     
     <script type="module" src="scripts/script.js"></script>

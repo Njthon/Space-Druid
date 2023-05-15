@@ -3,9 +3,21 @@
   src: url("http://fonts.cdnfonts.com/css/stigo");
 }
 
+:root {
+  --main-color: rgb(242, 104, 255);
+  --second-color: rgb(243, 234, 109);
+  --color-one: rgb(241, 31, 31);
+  --color-two: orange;
+  --color-three: rgb(54 199 0);
+  --plr-run-1: ;
+}
+
 * {
   padding: 0;
   margin: 0;
+}
+body {
+  background-image: url(../media/vecteezy_galaxy-background-with-falling-star-vector-space-galaxy_7120314.jpg);
 }
 
 #start-game {
@@ -31,10 +43,10 @@
   left: 35%;
   width: 96px;
   height: 40px;
-  background-color: rgb(243, 234, 109);
+  background-color: var(--second-color);
   border: 2px solid rgb(189, 212, 120);
-  border-radius: 20px 50px 10px;
-  border: 4px double rgb(242, 104, 255);
+  border-radius: 10px 50px 10px;
+  border: 4px double var(--main-color);
   box-shadow: inset 0 0 black;
   margin-top: -100px;
   margin-left: -100px;
@@ -44,17 +56,43 @@
   background-size: cover;
   text-align: center;
   font-size: large;
-  color: rgb(243, 234, 109);
+  color: var(--second-color);
+}
+
+.start-button {
+  width: 136px;
+  height: 52px;
+  background-color: var(--second-color);
+  border: 2px solid rgb(189, 212, 120);
+  margin-left: 10px;
+  margin-top: 30px;
+  align-self: center;
+  font-size: large;
+  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px blue, 0 0 5px darkblue;
+  border-radius: 20px 20px 20px 20px;
+  border: 4px double var(--main-color);
+  transition: all 0.1s ease-out;
+  font-family: "Games", sans-serif;
+  src: url("http://fonts.cdnfonts.com/css/games");
+  box-shadow: 0 5px #666;
+  animation: color-animation 0.5s infinite alternate;
+}
+
+.start-button:active {
+  background-color: #dd61f2;
+  transform: translateY(4px);
+  box-shadow: none;
+  animation-duration: 0.2s;
 }
 
 #main-game {
   display: flex;
   width: 80%;
   height: 90%;
-  background-color: rgb(243, 234, 109);
+  background-color: var(--second-color);
   border: 2px solid rgb(189, 212, 120);
   border-radius: 10px 50px 20px;
-  border: 4px double rgb(242, 104, 255);
+  border: 4px double var(--main-color);
   overflow: hidden;
   position: absolute;
   margin: 1em;
@@ -67,40 +105,36 @@
 
 #player {
   position: absolute;
-  border-radius: 50%;
   overflow: hidden;
-  background-image: url(../media/run6.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: auto;
+  animation: sprite 1s infinite;
+  background-image: url("../media/PlayerStanding.png");
+  background-repeat: no-repeat;
 }
 
-#enemy {
+.enemy {
   position: absolute;
   background-image: url(../media/skeleton-animation_01.png);
   background-size: 100%;
   background-repeat: no-repeat;
 }
 
-.enemyExtra {
-  position: absolute;
-  background-image: url(../media/skeleton-animation_01.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
 #hearts-container {
-  margin-left: 70%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
   width: 100px;
   height: 40px;
-  background-color: aliceblue;
-}
-
-.heart {
-  background-color: red;
-  border: 0.1px solid white;
+  margin-left: 10px;
+  background-color: var(--second-color);
+  border: 2px solid rgb(189, 212, 120);
+  border-radius: 10px 50px 20px;
+  border: 4px double var(--main-color);
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: baseline;
+  gap: 2px;
+  z-index: 1;
 }
 
 .flower {
@@ -110,38 +144,40 @@
   position: absolute;
 }
 
-#points {
+.heart {
+  background-image: url(../media/redheart.png);
+  background-size: contain;
+  animation: bounce-animation 0.3s infinite;
+}
+
+@keyframes bounce-animation {
+  0% {
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+#points-container {
   width: 96px;
   height: 40px;
-  background-color: rgb(243, 234, 109);
+  background-color: var(--second-color);
   border: 2px solid rgb(189, 212, 120);
   margin-left: 10px;
   margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
-  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px blue, 0 0 5px darkblue;
   border-radius: 10px 50px 20px;
-  border: 4px double rgb(242, 104, 255);
-  font-family: "Games", sans-serif;
-  src: url ("http://fonts.cdnfonts.com/css/games");
+  border: 4px double var(--main-color);
+  z-index: 1;
 }
 
-#start-button {
-  width: 136px;
-  height: 70px;
-  background-color: rgb(243, 234, 109);
-  border: 2px solid rgb(189, 212, 120);
-  margin-left: 10px;
-  margin-top: 40px;
-  align-self: center;
-  font-size: 10px;
-  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px blue, 0 0 5px darkblue;
-  border-radius: 20px 20px 20px 20px;
-  border: 4px double rgb(242, 104, 255);
+#points {
+  font-size: 40px;
+
+  animation: bounce-animation 0.3s infinite;
   font-family: "Games", sans-serif;
-  src: url ("http://fonts.cdnfonts.com/css/games");
 }
 
 a,
@@ -176,7 +212,7 @@ h1 {
 }
 
 #gameover-div {
-  display: flex;
+  display: none;
   justify-content: center;
   flex-direction: column;
   padding: 20px;
@@ -185,63 +221,81 @@ h1 {
   left: 42%;
   width: 96px;
   height: 40px;
-  background-color: rgb(243, 234, 109);
+  background-color: var(--second-color);
   border: 2px solid rgb(189, 212, 120);
-  border-radius: 20px 50px 10px;
-  border: 4px double rgb(242, 104, 255);
+  border-radius: 10px 50px 10px;
+  border: 4px double var(--main-color);
   box-shadow: inset 0 0 black;
   margin-top: -100px;
   margin-left: -100px;
-  height: 200px;
+  height: 230px;
   width: 250px;
   text-align: center;
   background-image: url(../media/vecteezy_galaxy-background-with-falling-star-vector-space-galaxy_7120314.jpg);
   background-size: cover;
-}
-
-h2 {
-  color: rgb(230, 25, 25);
-  font-family: "Stigo", sans-serif;
-}
-
-#h3-start-game {
-  margin-top: 100px;
-  font-family: "Stigo", sans-serif;
-  color: rgb(139, 211, 68);
-}
-
-#h2-start-game {
-  margin-top: 100px;
-  font-family: "Stigo", sans-serif;
-  color: rgb(21, 255, 0);
-}
-
-#scoring {
-  width: 10vw;
-  height: 5vw;
-  font-size: medium;
-}
-#gameover-score {
-  font-size: 24px;
-  font-weight: bold;
-  color: red;
-  margin-top: 20px;
+  font-family: "Games", sans-serif;
 }
 
 #gameover-score {
   color: black;
   width: 96px;
   height: 40px;
-  background-color: rgb(243, 234, 109);
+  background-color: var(--second-color);
   border: 2px solid rgb(189, 212, 120);
   left: 797px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  align-self: center;
+  font-size: 20px;
   text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px blue, 0 0 5px darkblue;
   border-radius: 10px 50px 20px;
-  border: 4px double rgb(242, 104, 255);
+  border: 4px double var(--main-color);
   font-family: "Games", sans-serif;
   src: url ("http://fonts.cdnfonts.com/css/games");
+}
+
+#reStart-button {
+  width: 136px;
+  height: 52px;
+  background-color: var(--second-color);
+  border: 2px solid rgb(189, 212, 120);
+  margin-left: 10px;
+  margin-top: 30px;
+  align-self: center;
+  font-size: large;
+  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px blue, 0 0 5px darkblue;
+  border-radius: 20px 20px 20px 20px;
+  border: 4px double var(--main-color);
+  transition: all 0.1s ease-out;
+  font-family: "Games", sans-serif;
+  src: url("http://fonts.cdnfonts.com/css/games");
+  box-shadow: 0 5px #666;
+  animation: color-animation 0.5s infinite alternate;
+}
+
+#reStart-button:active {
+  background-color: #dd61f2;
+  transform: translateY(4px);
+  box-shadow: none;
+  animation-duration: 0.2s;
+}
+
+span {
+  animation: color-animation 0.5s infinite alternate;
+  animation-duration: 0.3s;
+  font-family: "Games", sans-serif;
+  font-size: 18px;
+  color: var(--color-three);
+}
+
+@keyframes color-animation {
+  0% {
+    /* font-size: 20px; */
+  }
+
+  50% {
+    transform: scale(1.02);
+    /* font-size: 18px; */
+  }
 }

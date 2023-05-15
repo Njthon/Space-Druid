@@ -1,10 +1,13 @@
+const dinWidth = document.getElementById("main-game").offsetWidth;
+const dinHeight = document.getElementById("main-game").offsetHeight;
+
 export class Prize {
 
     constructor() {
         this.width = 40;
         this.height = 40;
-        this.positionX = Math.floor(Math.random() * (727 - this.width + 1));
-        this.positionY = Math.floor(Math.random() * (717 - this.height + 1));
+        this.positionX = Math.floor(Math.random() * (dinWidth - this.width + 1));
+        this.positionY = Math.floor(Math.random() * (dinHeight - this.height + 1));
         this.createDom();
         this.flower = [];
         this.dom = null;

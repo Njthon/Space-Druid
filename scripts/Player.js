@@ -1,10 +1,9 @@
 export class Player {
-
     constructor() {
         this.positionX = 20;
         this.positionY = 10;
-        this.width = 130;
-        this.height = 130;
+        this.width = 60;
+        this.height = 60;
         this.createDomElement();
     }
     createDomElement() {
