@@ -29,7 +29,7 @@ const instructions = document.createElement("span")
 const trackInfo = document.createElement("span")
 trackInfo.setAttribute("id", "track-info")
 stopButton.setAttribute("id", "stop-track")
-startgameText1.textContent = "Sara the Space Druid and her doggo are traveling through deep space. But doggo got sick :("
+startgameText1.textContent = "Sara the Space Druid and Moki, her dog, are traveling through deep space. But doggo got sick :("
 startgameText2.textContent = "Help the courageous Space Druid to collect plants to cure her friend!"
 instructions.textContent = "move ←↑→↓"
 stopButton.textContent = " Music :  Flavien Berger__Berzingue "
