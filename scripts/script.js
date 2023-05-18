@@ -10,11 +10,13 @@ stopButton.setAttribute("id", "stop-track")
 
 stopButton.addEventListener("click", function () {
     audio.pause();
+
 });
 
 
 // START GAME DIV
 
+audio.play();
 
 const startgameDiv = document.createElement("div")
 startgameDiv.setAttribute("id", "startgame-div")
@@ -30,7 +32,7 @@ stopButton.setAttribute("id", "stop-track")
 startgameText1.textContent = "Sara the Space Druid and her doggo are traveling through deep space. But doggo got sick :("
 startgameText2.textContent = "Help the courageous Space Druid to collect plants to cure her friend!"
 instructions.textContent = "move ←↑→↓"
-stopButton.textContent = "Music :  Flavien Berger__Berzingue "
+stopButton.textContent = " Music :  Flavien Berger__Berzingue "
 startgameDiv.appendChild(startgameText1)
 startgameDiv.appendChild(startgameText2)
 startgameDiv.appendChild(instructions)
