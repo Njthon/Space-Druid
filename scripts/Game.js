@@ -34,26 +34,26 @@ export class Game {
         document.addEventListener("keydown", (event) => {
             if (event.key === "ArrowLeft" && this.player.positionX > 0) {
                 this.player.moveLeft();
-                playerDiv.style.backgroundImage = "url('../media/SpaceDruidRun.gif')"
+                playerDiv.style.backgroundImage = "url('./media/SpaceDruidRun.gif')"
                 playerDiv.style.transform = "rotateY(180deg)";
 
             } else if (event.key === "ArrowRight" && this.player.positionX < dinWidth - this.player.width) {
                 this.player.moveRight();
-                playerDiv.style.backgroundImage = "url('../media/SpaceDruidRun.gif')"
+                playerDiv.style.backgroundImage = "url('./media/SpaceDruidRun.gif')"
                 playerDiv.style.transform = "rotateY(0deg)";
 
             } else if (event.key === "ArrowUp" && this.player.positionY < dinHeight - this.player.height) {
                 this.player.moveUp();
-                playerDiv.style.backgroundImage = "url('../media/SpaceDruidRun.gif')"
+                playerDiv.style.backgroundImage = "url('./media/SpaceDruidRun.gif')"
 
             } else if (event.key === "ArrowDown" && this.player.positionY > 0) {
                 this.player.moveDown();
-                playerDiv.style.backgroundImage = "url('../media/SpaceDruidRun.gif')"
+                playerDiv.style.backgroundImage = "url('./media/SpaceDruidRun.gif')"
             }
         });
 
         document.addEventListener("keyup", (event) => {
-            playerDiv.style.backgroundImage = "url('../media/PlayerStanding.png')"
+            playerDiv.style.backgroundImage = "url('./media/PlayerStanding.png')"
 
         })
     };
@@ -76,7 +76,6 @@ export class Game {
         const dinWidth = document.getElementById("main-game").offsetWidth
         const dinHeight = document.getElementById("main-game").offsetHeight
         const enemies = [this.enemy, ...this.minions]
-
 
         // Move Enemies
 

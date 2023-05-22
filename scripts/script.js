@@ -16,7 +16,6 @@ stopButton.addEventListener("click", function () {
 
 // START GAME DIV
 
-audio.play();
 
 const startgameDiv = document.createElement("div")
 startgameDiv.setAttribute("id", "startgame-div")
@@ -49,6 +48,8 @@ startgameDiv.appendChild(startButton)
 startButton.addEventListener("click", function () {
     const startGame = new Game()
     startgameDiv.style.display = "none"
+    audio.play();
+
 });
 
 
